@@ -65,7 +65,7 @@ class Url extends ProductUrl
             $routeParams['_scope'] = $urlDataObject->getStoreId();
         } else {
             $requestPath = $product->getRequestPath();
-            if ($requestPath === '') {
+            if (empty($requestPath) && $requestPath !== false) {
                 $filterData = [
                     UrlRewrite::ENTITY_ID   => $product->getId(),
                     UrlRewrite::ENTITY_TYPE => ProductUrlRewriteGenerator::ENTITY_TYPE,
